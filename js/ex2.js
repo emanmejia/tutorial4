@@ -1,28 +1,20 @@
-const unitsInput = prompt("Please enter the number of units completed:");
+const inputName = prompt("Please enter your name? ");
+const inputNumber = prompt("Please enter your units completed in college? ");
+const number = Number(inputNumber);
 
-  // Parse the input to an integer
-  const unitsCompleted = Number.parseInt(unitsInput, 10);
 
-  // Validate units input
-  if (isNaN(unitsCompleted) || unitsCompleted < 0 || !Number.isInteger(unitsCompleted)) {
-      console.log(`Sorry, ${unitsInput} is not a valid entry for units completed.`);
-      return;
-  }
 
-  // Determine grade standing
-  let gradeStanding;
-  if (unitsCompleted >= 0 && unitsCompleted <= 30) {
-      gradeStanding = "Freshman";
-  } else if (unitsCompleted <= 60) {
-      gradeStanding = "Sophomore";
-  } else if (unitsCompleted <= 90) {
-      gradeStanding = "Junior";
-  } else {
-      gradeStanding = "Senior";
-  }
-
-  // Output the message
-  console.log(`Your grade standing is ${gradeStanding}`);
-
-// Call the function
-getUserInfo();
+console.log("Hello " + inputName)
+if (inputNumber === "") {
+    console.log('No input was entered, please enter a valid number.');
+} else if ((number >= 0) && (number <= 30)) {
+  console.log('Thank you!  You entered ' + number + ' units, Your grade standing is Freshman.');
+} else if ((number >= 31) && (number <= 60)) {
+  console.log('Thank you!  You entered ' + number + ' units, Your grade standing is Sophomore.');
+} else if ((number >= 61) && (number <= 90)) {
+  console.log('Thank you!  You entered ' + number + ' units, Your grade standing is Junior.');
+} else if (number >= 91) {
+  console.log('Thank you!  You entered ' + number + ' units, Your grade standing is Senior.');
+} else {
+  console.log('Your college unit number entry was invalid.')
+}

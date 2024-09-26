@@ -1,4 +1,8 @@
-// Gets user input
-var num = prompt("What is your favorite number? ");
+const number = prompt("Enter a number:");
 
-console.log("Your favorite number is " + num);
+console.log("Multiplication Table for $" + number);
+
+for (let i = 0; i <= 10; i++) {
+    const result = number * i;
+    console.log(`${number} x ${i} = ${result}`);
+}
